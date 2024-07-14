@@ -127,10 +127,9 @@ void deleteNode(int position, Node* &head, Node* &tail) {
                 delete temp;
                 return;
         }
-        int len  = findLength(head);
-
 
         //deleting last node
+        int len  = findLength(head);
         if(position == len) {
                 //find prev
                 int i = 1;
@@ -152,11 +151,11 @@ void deleteNode(int position, Node* &head, Node* &tail) {
 
         //deleting middle node
 
-        //step  : find prev and curr
-        int i =1;
+        //step 1: find prev and curr
+        int i = 1;
         Node* prev = head;
-        while( i < position-1) {
-                prev= prev -> next;
+        while( i < position - 1) {
+                prev = prev -> next;
                 i++;
         }
         Node* curr = prev -> next;
@@ -167,8 +166,8 @@ void deleteNode(int position, Node* &head, Node* &tail) {
         curr -> next = NULL;
         //step4:
         delete curr;
-
 }
+
 int main() {
 
         Node* head = NULL;
