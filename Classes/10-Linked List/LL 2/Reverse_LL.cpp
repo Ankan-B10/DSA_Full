@@ -21,6 +21,7 @@ class Node {
                 cout << "Node with value: " << this->data << "deleted" << endl;
         }
 };
+
 void print(Node* head) {
 
         Node* temp = head;
@@ -38,25 +39,6 @@ int findLength(Node* &head ) {
                 len++;
         }
         return len;
-}
-
-void insertAtHead(Node* &head, Node* &tail, int data) {
-        //check for Empty LL
-        if(head == NULL) {
-                Node* newNode = new Node(data);
-                head = newNode;
-                tail = newNode;
-        }
-        else {
-                //step1:
-                Node* newNode = new Node(data);
-                //step2:
-                newNode -> next = head;
-                //step3:
-                head = newNode;
-        }
-
-
 }
 
 Node* reverse(Node* &prev, Node* &curr) {
@@ -85,6 +67,7 @@ Node* reverseusingLoop(Node* head ) {
         }
         return prev;
 }
+
 Node* reverseusingRecursion(Node* prev, Node* curr) {
         //base case
         if(curr == NULL) 
@@ -98,31 +81,21 @@ Node* reverseusingRecursion(Node* prev, Node* curr) {
         //recursion sambhal lega
         return reverseusingRecursion(prev, curr);
 }
+
 int main() {
 
-        Node* head = NULL;
-        Node* tail = NULL;
-        insertAtHead(head, tail,20);
-        insertAtHead(head, tail,50);
-        insertAtHead(head, tail,60);
-        insertAtHead(head,tail, 90);
-
+        Node* head = new Node(10);
+        Node* first = new Node(20);
+        Node* second = new Node(30);
+        Node* third = new Node(40);
+        
+        head -> next = first;
+        first -> next = second;
+        second -> next = third;
+        third -> next = NULL; 
+        
         print(head);
         cout << endl;
-        // cout << "head: " << head -> data << endl;
-        // cout << "tail: " << tail->data << endl;
-
-        // insertAtPosition(101, 5, head, tail);
-        // cout<< "Printing after insert at position call" << endl;
-        // print(head);
-        // cout << endl;
-        // cout << "head: " << head -> data << endl;
-        // cout << "tail: " << tail->data << endl;
-
-       // deleteNode(9, head, tail);
-        // cout << endl;
-        // print(head);
-         cout << endl;
 
         Node* prev = NULL;
         Node* curr = head;
