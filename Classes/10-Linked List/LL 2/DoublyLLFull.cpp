@@ -180,8 +180,6 @@ void deleteFromPos(Node* &head, Node* &tail, int position) {
         curr -> next = NULL;
         curr ->prev = NULL;
         delete curr;
-
-
 }
 
 int main() {
@@ -198,7 +196,7 @@ int main() {
         second ->next = third;
         third->prev = second;
 
-        print(first);
+        print(head);
         cout << endl;
 
         insertAtHead(head,tail, 101);
