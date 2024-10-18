@@ -60,20 +60,17 @@ int getRectangularAreaHistogram(vector<int> &height) {
 
         int maxArea = INT_MIN;
         int size = height.size();
-
         for(int i=0; i<height.size(); i++) {
                 int length = height[i];
                 
+                //crusial case -> nextSmaller -1 convert to size to calculate width
                 if(next[i] == -1) {
                         next[i] = size;
                 }
-
                 int width = next[i] - prev[i] - 1;
-
                 int area = length * width;
                 maxArea = max(maxArea, area);
         }
-
         return maxArea;
 }
 
