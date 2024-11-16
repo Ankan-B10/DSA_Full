@@ -27,7 +27,7 @@ class Queue{
                 cout << "Queue is empty" << endl;
             }
             else{
-                arr[front] = -1;
+                arr[front] = -1; // -1 for marking
                 front++;
                 if(front == rear){
                     front = 0;
