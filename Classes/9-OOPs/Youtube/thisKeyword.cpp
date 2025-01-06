@@ -22,7 +22,7 @@ class Teacher{
        this->dept = dept;
        this->subject = subject; //object->constructor
        this->salary = salary;
-    }
+    } 
 
     void getInfo(){   //to get the info 
         cout<<"name :" <<name<<endl;
