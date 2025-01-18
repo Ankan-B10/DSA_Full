@@ -40,6 +40,7 @@ void levelOrderTraversal(Node* root){
     queue<Node*> q;
     //initially
     q.push(root);
+    q.push(NULL);
     //then remove the root
 
     while (!q.empty()){
@@ -47,7 +48,14 @@ void levelOrderTraversal(Node* root){
         Node* temp = q.front();
         //B
         q.pop();
-        //C
+        if(temp == NULL){
+            cout<<endl;
+            if(!q.empty()){
+                q.push(NULL);
+            }
+        }
+        else{
+            //C
         cout<<temp->data<<" ";
         //D
         if(temp->left){
@@ -55,6 +63,7 @@ void levelOrderTraversal(Node* root){
         }
         if(temp->right){
             q.push(temp->right);
+        }
         }
     }
 }
