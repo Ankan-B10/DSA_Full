@@ -10,5 +10,6 @@ int main()
     pair<string, int> p1 = {"Ankan", 6};
     cout<<p1.first<<endl;
     cout<<p1.second<<endl;
+    
 return 0;
 }
